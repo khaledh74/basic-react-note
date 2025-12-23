@@ -1,0 +1,51 @@
+git add .
+git commit -m 'some comment'
+git push 
+git push -f
+git rebase origin/master
+git reset HEAD~1
+git clone 
+
+import {
+  useCallback,
+  useEffect,
+  memo,
+  useRef,
+  useContext,
+  createContext,
+  useLayoutEffect,
+  useMemo,
+} from "react";
+ //useCallback >> memorize function in memory until some change related to this function to re create
+  //useEffect >> run function once the page is rendered and when any params change
+  //useLayoutEffect >> run function after the page is fully rendered
+  //memo >> memorize the page but DO NOT USE IT WITH CHILDREN
+  //useRef >> get the properties of element by the refrence
+  //useMemo >>
+  //useContext >>
+  //createContext
+
+   let param = 1;
+
+  const test = useRef(null);
+
+  console.log(test?.current);
+
+  const fun = useCallback(() => {}, []);
+  const handleChangeInput = useCallback(() => {
+    param = param + 1;
+  }, [param]);
+
+  useEffect(() => {}, []);
+  useEffect(() => {
+    handleChangeInput();
+  }, []);
+
+  useLayoutEffect(() => {}, []);
+  useLayoutEffect(() => {
+    handleChangeInput();
+  }, []);
+
+  const test2 = useMemo(() => {
+    return; // something
+  }, []);
